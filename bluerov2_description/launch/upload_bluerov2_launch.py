@@ -42,7 +42,8 @@ def launch_setup():
             bridges.append(GazeboBridge(f'/model/{ns}/odometry',
                                      'odom', 'nav_msgs/Odometry', GazeboBridge.gz2ros,
                                      'gz.msgs.Odometry'))
-            sl.node('pose_to_tf',parameters={'child_frame': ns + '/base_link'})
+            sl.node('pose_to_tf',parameters={'child_frame': ns + '/base_link'},
+                    output='screen')
         else:
             # otherwise publish ground truth as another link to get, well, ground truth
             sl.node('pose_to_tf',parameters={'child_frame': ns+'/base_link_gt'})
