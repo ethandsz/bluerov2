@@ -50,6 +50,7 @@ def launch_setup():
 
         # imu
         for imu in ('mpu', 'lsm'):
+            print("imu")
             bridges.append(GazeboBridge(f'{ns}/{imu}',
                           imu, 'sensor_msgs/Imu', GazeboBridge.gz2ros))
 

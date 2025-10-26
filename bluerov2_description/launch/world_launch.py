@@ -8,7 +8,8 @@ def generate_launch_description():
     sl.declare_arg('spawn', default_value=True)
 
     with sl.group(if_arg='gui'):
-        sl.gz_launch(sl.find('bluerov2_description', 'demo_world.sdf'), "-r")
+        # sl.gz_launch(sl.find('bluerov2_description', 'demo_world.sdf'), "-r")
+        sl.gz_launch(sl.find('bluerov2_description', 'demo_world_empty.sdf'), "-r")
         
     with sl.group(unless_arg='gui'):
         sl.gz_launch(sl.find('bluerov2_description', 'demo_world.sdf'), "-r -s")
